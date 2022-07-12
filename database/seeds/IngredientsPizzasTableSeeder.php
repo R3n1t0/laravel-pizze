@@ -1,10 +1,10 @@
 <?php
 
-use App\Ingredient;
 use App\Pizza;
+use App\Ingredient;
 use Illuminate\Database\Seeder;
 
-class PizzasIngredientsTableSeeder extends Seeder
+class IngredientsPizzasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

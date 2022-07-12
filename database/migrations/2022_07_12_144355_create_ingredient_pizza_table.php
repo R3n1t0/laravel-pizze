@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePizzaIngredientTable extends Migration
+class CreateIngredientPizzaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePizzaIngredientTable extends Migration
      */
     public function up()
     {
-        Schema::create('pizza_ingredient', function (Blueprint $table) {
+        Schema::create('ingredient_pizza', function (Blueprint $table) {
 
             $table->unsignedBigInteger('pizza_id');
             $table->unsignedBigInteger('ingredient_id');
@@ -27,7 +27,6 @@ class CreatePizzaIngredientTable extends Migration
                     ->references('id')
                     ->on('ingredients')
                     ->onDelete('cascade');
-
         });
     }
 
@@ -38,6 +37,6 @@ class CreatePizzaIngredientTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizza_ingredient');
+        Schema::dropIfExists('ingredient_pizza');
     }
 }
