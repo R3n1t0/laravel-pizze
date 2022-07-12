@@ -8,7 +8,9 @@ use Illuminate\Support\Str;
 class Pizza extends Model
 {
 
-  
+    public function ingredients(){
+         return $this->belongsToMany('App\Ingredient');
+    }
 
     protected $fillable = [
 

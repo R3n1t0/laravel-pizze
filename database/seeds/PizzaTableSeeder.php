@@ -19,26 +19,24 @@ class PizzaTableSeeder extends Seeder
 
 
         foreach ($pizzas as $pizza) {
-            
+
             $new_pizza = new Pizza();
             $new_pizza->nome = $pizza['nome'];
             $new_pizza->slug = Pizza::generateSlug($new_pizza->nome);
             $new_pizza->prezzo = $pizza['prezzo'];
-            
+
             if(!empty($pizza['popolarita'])){
                 $new_pizza->popolarita = $pizza['popolarita'];
             }
-
-            $new_pizza->ingredienti = $pizza['ingredienti'];
 
             if($pizza['vegetariana'] == 'sì'){
                 $new_pizza->vegetariana = 1 ;
             }else{
                 $new_pizza->vegetariana = 0;
             }
-            
+
             $new_pizza->save();
         }
-        
+
     }
 }

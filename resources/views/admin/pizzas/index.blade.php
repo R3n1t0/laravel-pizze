@@ -27,7 +27,7 @@
                   <td>{{ $pizza->nome }}</td>
                   <td>{{ $pizza->prezzo }}</td>
                   <td>{{ $pizza->popolarita }}</td>
-                  <td>{{ $pizza->ingredienti }}</td>
+                  <td>{{-- {{ $pizza->ingredienti }} --}}</td>
                   <td>
                     @if ($pizza->vegetariana == 1)
                     {{ $pizza->vegetariana = 'si' }}

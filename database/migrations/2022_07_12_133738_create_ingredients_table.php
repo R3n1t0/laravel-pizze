@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePizzasTable extends Migration
+class CreateIngredientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreatePizzasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pizzas', function (Blueprint $table) {
+        Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 50);
-            $table->string('slug',70)->unique();
-            $table->decimal('prezzo')->unsigned();
-            $table->tinyInteger('popolarita')->nullable()->unsigned();
-            $table->boolean('vegetariana')->default(0);
+            $table->string('name', 50);
+            $table->string('slug', 50);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreatePizzasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizzas');
+        Schema::dropIfExists('ingredients');
     }
 }

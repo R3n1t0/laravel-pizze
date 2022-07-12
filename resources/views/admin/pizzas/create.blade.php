@@ -25,10 +25,10 @@
         {{-- NOME pIZZA --}}
         <div class="mb-3">
           <label for="nome" class="form-label">Nome Pizza</label>
-          <input type="text" 
-            class="form-control @error ('nome') is-invalid @enderror" 
+          <input type="text"
+            class="form-control @error ('nome') is-invalid @enderror"
             value="{{ old('nome') }}"
-            name="nome" id="nome" 
+            name="nome" id="nome"
             placeholder="Inserisci un nome" required>
             @error('nome')
               <p class="invalid-feedback d-block">{{ $message }}</p>
@@ -40,7 +40,7 @@
         {{-- PREZZO PIZZA --}}
         <div class="mb-3">
           <label for="prezzo" class="form-label">Prezzo</label>
-          <input type="number" step=".1" class="form-control  @error ('prezzo') is-invalid @enderror" 
+          <input type="number" step=".1" class="form-control  @error ('prezzo') is-invalid @enderror"
           value="{{ old('prezzo') }}"
           name="prezzo" id="prezzo" placeholder="Inserisci il prezzo" required>
           @error('prezzo')
@@ -54,17 +54,17 @@
 
 
         {{-- INGREDIENTI PIZZA --}}
-        <div class="mb-3">
+{{--         <div class="mb-3">
           <label for="ingredienti" class="form-label">Ingredienti</label>
           <input type="text" class="form-control  @error ('ingredienti') is-invalid @enderror"
-          value="{{ old('ingredienti') }}" 
+          value="{{ old('ingredienti') }}"
           name="ingredienti" id="ingredienti" placeholder="Inserisci gli ingredienti" required>
           @error('ingredienti')
           <p class="invalid-feedback d-block">
             {{ $message }}
           </p>
           @enderror
-        </div>
+        </div> --}}
         <div class="mb-3 form-check">
           {{-- <p>Vegetariana:</p> --}}
           {{-- VEGETARIAN --}}

@@ -8,16 +8,16 @@
   <h1>Nome: {{ $pizza->nome }}</h1>
   <p>Slug: {{ $pizza->slug }}</p>
   <p>Prezzo:{{ $pizza->prezzo }}</p>
-  <p>Ingredienti: {{ $pizza->ingredienti }}</p>
+  <p>Ingredienti: {{-- {{ $pizza->ingredienti }} --}}</p>
 
   @if ($pizza->popolarita != 0)
 
     <p>Popolarita`: {{ $pizza->popolarita }}  </p>
-  
+
   @endif
 
 
-  <p>Vegetariana: 
+  <p>Vegetariana:
     @if ($pizza->vegetariana == 1)
       {{ $pizza->vegetariana = 'si' }}
     @else {{ $pizza->vegetariana = 'no' }}
