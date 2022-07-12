@@ -54,17 +54,25 @@
 
 
         {{-- INGREDIENTI PIZZA --}}
-       {{--  <div class="mb-3">
-          <label for="ingredienti" class="form-label">Ingredienti</label>
-          <input type="text" class="form-control  @error ('ingredienti') is-invalid @enderror"
-          value="{{ old('ingredienti', $pizza->ingredienti) }}"
-          name="ingredienti" id="ingredienti" placeholder="Inserisci gli ingredienti" required>
-          @error('ingredienti')
-          <p class="invalid-feedback d-block">
-            {{ $message }}
-          </p>
+        <div class="mb-3">
+            @foreach ($ingredients as $ingredient)
+                <input
+                        type="checkbox"
+                        name="ingredients[]"
+                        id="ingredient{{$loop->iteration}}"
+                        value="{{$ingredient->id}}"
+                        @if (in_array($ingredient->id, old('ingredients', [])))
+                            checked
+                        @endif>
+                <label for="ingredient{{$loop->iteration}}" >{{$ingredient->name}}</label>
+            @endforeach
+            @error('ingredients')
+            <p class="invalid-feedback d-block">{{ $message }}</p>
           @enderror
-        </div> --}}
+        </div>
+
+
+
         <div class="mb-3 form-check">
           {{-- <p>Vegetariana:</p> --}}
           {{-- VEGETARIAN --}}

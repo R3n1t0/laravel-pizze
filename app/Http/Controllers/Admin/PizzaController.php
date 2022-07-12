@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Pizza;
 use App\Http\Requests\PizzaRequest;
-
+use App\Ingredient;
 
 class PizzaController extends Controller
 {
@@ -27,8 +27,9 @@ class PizzaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-        return view('admin.pizzas.create');
+    {
+        $ingredients = Ingredient::all();
+        return view('admin.pizzas.create', compact('ingredients'));
     }
 
     /**
@@ -44,6 +45,8 @@ class PizzaController extends Controller
         $data['slug'] = Pizza::generateSlug($data['nome']);
         $new_pizza->fill($data);
         $new_pizza->save();
+        $new_pizza->ingredients()->attach($data['ingredients']);
+
         return redirect()->route( 'admin.pizzas.show', $new_pizza );
     }
 
@@ -66,9 +69,10 @@ class PizzaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
+    {
         $pizza = Pizza::find($id);
-        return view( 'admin.pizzas.edit', compact('pizza') );
+        $ingredients = Ingredient::all();
+        return view( 'admin.pizzas.edit', compact('pizza', 'ingredients') );
     }
 
     /**

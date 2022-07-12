@@ -17,7 +17,7 @@ class Pizza extends Model
         'nome',
         'slug',
         'prezzo',
-        'ingredienti',
+        'ingredient_id',
         'vegetariana'
 
     ];

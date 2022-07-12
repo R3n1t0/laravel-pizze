@@ -26,7 +26,7 @@ class PizzaRequest extends FormRequest
         return [
             'nome'=> 'required|min:3|max:50',
             'prezzo'=> 'required|numeric|between:0,99.99',
-            'ingredienti'=>'required|min:3|max:255',
+            'ingredients'=>'required',
         ];
     }
 
@@ -37,9 +37,7 @@ class PizzaRequest extends FormRequest
             'nome.required' => 'Questo campo e obligatorio',
             'nome.min' => 'Questo campo avere minimo :min caratteri',
             'nome.max' => 'Questo campo deve avere massimo :max caratteri',
-            'ingredienti.required' => 'Questo campo e obligatorio',
-            'ingredienti.min' => 'Questo campo avere minimo :min caratteri',
-            'ingredienti.max' => 'Questo campo deve avere massimo :max caratteri',
+            'ingredients.required' => 'Questo campo e obligatorio',
             'prezzo.required' => 'Questo campo e obligatorio',
             'prezzo.numeric' => 'In questo campo devi inserire un numero',
             'prezzo.between' => 'Inserisci un prezzo da 0 a 99,99',
